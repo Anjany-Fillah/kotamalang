@@ -1,0 +1,344 @@
+/* ======= Import Google Font ======= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap');
+
+/* ======= Global Reset & Body ======= */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f9fafb;
+  color: #333;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+/* ======= Header ======= */
+.site-header {
+  background: linear-gradient(90deg, #6b0f1a, #b91372);
+  color: #fff;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar nav a:hover {
+  text-decoration: underline;
+}
+
+/* ======= Hero Section ======= */
+.hero-text {
+  position: relative;
+  background: url('malang-background.jpg') center/cover no-repeat;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+}
+
+.hero-text::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-text h2,
+.hero-text p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  margin-bottom: 16px;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* ======= Layout Container ======= */
+.container {
+  display: flex;
+  gap: 32px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: auto;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ======= Main Content ======= */
+.main-content {
+  flex: 1 1 65%;
+  min-width: 300px;
+}
+
+/* ======= Sidebar ======= */
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.sidebar .search-box,
+.sidebar .kategori-box,
+.sidebar .tentang-box {
+  background: linear-gradient(180deg, #ffffff, #f1f1f1);
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: justify;
+}
+
+.sidebar h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #b91372, #6b0f1a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sidebar input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.sidebar input:focus {
+  outline: none;
+  border-color: #b91372;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px 14px;
+  background: linear-gradient(to right, #b91372, #6b0f1a);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: linear-gradient(to right, #6b0f1a, #b91372);
+  transform: translateY(-1px);
+}
+
+/* ======= Artikel Unggulan ======= */
+.featured-article {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.featured-article:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.featured-article img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.featured-text {
+  padding: 24px;
+  text-align: justify;
+}
+
+.featured-text h2 {
+  margin-top: 10px;
+}
+
+/* ======= Grid Artikel Kecil ======= */
+.grid-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.small-article {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.small-article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.small-article img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.small-article .text {
+  padding: 16px;
+  text-align: justify;
+}
+
+/* ======= Konten Artikel Detail ======= */
+.konten-artikel .card-with-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-with-image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.card-with-image .card-text {
+  max-width: 720px;
+  text-align: justify;
+}
+
+/* ======= Tombol Umum ======= */
+.btn,
+.btn-small {
+  display: inline-block;
+  padding: 10px 16px;
+  background: linear-gradient(to right, #b91372, #6b0f1a);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn-small:hover {
+  background: linear-gradient(to right, #6b0f1a, #b91372);
+  transform: translateY(-1px);
+}
+
+/* ======= Footer ======= */
+footer {
+  background: linear-gradient(90deg, #6b0f1a, #b91372);
+  color: #ddd;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.95rem;
+  margin-top: 60px;
+  border-top: 5px solid #2e2e2e;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  clear: both;
+  width: 100%;
+}
+
+footer a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-text {
+    padding: 80px 20px;
+  }
+
+  .card-with-image img {
+    width: 100%;
+    height: auto;
+  }
+  .related-articles {
+  margin-top: 40px;
+}
+
+.related-articles h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #4b1c1c;
+}
+
+.related-articles .grid-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+}
